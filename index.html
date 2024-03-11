@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   <link rel="stylesheet" href="static/css/index.css" />
+  <link rel="stylesheet" href="static/css/hs-nerf.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -229,8 +230,100 @@
         <!-- Paper video. -->
         <h2 class="title is-3">Super-resolution</h2>
         <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            testing 1234
+          <div class="column is-full">
+            HS-NeRF:<br />Hyperspectral Super-resolution (interpolation)
+            <br />
+            <div class="hs-legend">
+              Key:
+              <div class="in-training">Wavelength in train set</div>
+              <div class="in-eval">Wavelength NOT in train set</div>
+            </div>
+            <div class="hs-image-grid-container">
+              <div class="grid-item pinned-col">
+                <h1 class="item-header"></h1>
+                <div class="placeholder-img">Ground Truth (some withheld)</div>
+                <div class="placeholder-img">Trained on every wavelength</div>
+                <div class="placeholder-img">Trained on every 2nd wavelength</div>
+                <div class="placeholder-img">Trained on every 4th wavelength</div>
+                <div class="placeholder-img">Trained on every 8th wavelength</div>
+                <div class="placeholder-img">Trained on every 16th wavelength</div>
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 0 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 1 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 2 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 3 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 4 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 5 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 6 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">Ch 6 (400nm)</h1>
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+              </div>
+              <div class="grid-item">
+                  <h1 class="item-header">TODO: all the rest</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>

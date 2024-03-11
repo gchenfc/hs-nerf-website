@@ -1,0 +1,92 @@
+.hs-image-grid-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0px;
+  position: relative;
+  /* background-color: white; */
+  border: 1px solid lightgray;
+}
+
+.hs-image-grid-container .grid-item {
+  flex: 0 0 auto;
+  width: 200px; /* Adjust as needed */
+  /* height: 100px; /* Adjust as needed */
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.hs-image-grid-container .pinned-col {
+  position: sticky;
+  left: 0;
+  z-index: 2; /* Ensure it's above other content */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hs-image-grid-container .grid-item .pinned-row {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensures headers are above other content but under the first column */
+  background-color: white; /* Or your desired background */
+}
+
+.hs-image-grid-container .grid-item .item-header {
+  width: 100%; /* Full width of the grid item */
+  text-align: center; /* Center the text */
+  margin-bottom: 10px; /* Space between header and images */
+  /* Additional styling for the header */
+  height: 24px;
+  padding-top: 10px;
+}
+
+.hs-image-grid-container .grid-item img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 5px auto; /* Center image horizontally, add margin */
+}
+.hs-image-grid-container .grid-item .in-training, .hs-legend .in-training {
+  border: solid 2px lightgray;
+}
+.hs-image-grid-container .grid-item .in-eval, .hs-legend .in-eval {
+  border: solid 2px blue;
+}
+
+.hs-image-grid-container .grid-item .placeholder-img {
+  width: 100%;
+  aspect-ratio: 640 / 512;
+  margin: 5px auto; /* Center image horizontally, add margin */
+  /* Center text horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hs-image-grid-container .overlay-text {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: red; /* Choose text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Allows clicking on the image through the text */
+}
+
+.hs-legend {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px;
+  margin: 0 auto;
+  width: fit-content;
+}
+.hs-legend * {
+  margin: 0 10px;
+  padding: 2px 6px;
+}
