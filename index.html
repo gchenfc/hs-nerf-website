@@ -235,29 +235,79 @@
         <!-- <div class="columns is-centered has-text-centered"> -->
         <div class="column is-centered has-text-centered">
 
-          <!-- HS Sweep, camera moving -->
+          <!-- HS Sweep, camera stationary -->
           <div class="column is-full box">
             <!-- Display the labels 128 64 32 16 centered and above the video -->
             <!-- <h3 class="title is-4">Videos: Sweep hyperspectral wavelengths</h3> -->
-            <h3 class="title is-4"><a href="#hs-sweep-videos" data-action="collapse">Videos: Sweep hyperspectral wavelengths &nbsp;&nbsp;[+]</a></h3>
-            <!-- <a href="#hs-sweep-videos" data-action="collapse">Collapse/Expand</a> -->
+            <a href="#hs-sweep-videos-stationary" data-action="collapse" class="collapsible-head">
+              <h3 class="title is-4">Videos: Sweep hyperspectral wavelengths &nbsp;&nbsp;[+]</h3>
+              <p>Our NeRFs can accurately predict an unseen viewpoint consistently across all wavelengths.
+              <br />
+              Furthermore, even withholding 87.5% of wavelengths from the training set has marginal impact on accuracy.</p>
+            </a>
 
-            <div class="is-full is-collapsible" id="hs-sweep-videos">
+            <div class="is-full is-collapsible" id="hs-sweep-videos-stationary">
               <div class="columns is-full">
-                <div class="column is-3">
+                <div class="column">
+                  <h1 class="title is-5">GROUND TRUTH</h1>
+                </div>
+                <div class="column">
                   <h1 class="title is-5">Trained on every wavelength</h1>
                 </div>
-                <div class="column is-3">
+                <div class="column">
                   <h1 class="title is-5">Trained on every 2nd wavelength</h1>
                 </div>
-                <div class="column is-3">
+                <div class="column">
                   <h1 class="title is-5">Trained on every 4th wavelength</h1>
                 </div>
-                <div class="column is-3">
+                <div class="column">
                   <h1 class="title is-5">Trained on every 8th wavelength</h1>
                 </div>
               </div>
               <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+              </video>
+              <!-- <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT1/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+              </video>
+              <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT2/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+              </video>
+              <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/PINECONE/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+              </video> -->
+            </div>
+          </div>
+
+          <!-- HS Sweep, camera moving -->
+          <div class="column is-full box">
+            <!-- Display the labels 128 64 32 16 centered and above the video -->
+            <!-- <h3 class="title is-4">Videos: Sweep hyperspectral wavelengths</h3> -->
+            <h3 class="title is-4"><a href="#hs-sweep-videos" data-action="collapse">Videos: Sweep hyperspectral wavelengths & Fly Camera &nbsp;&nbsp;[+]</a></h3>
+            <p>Watch this rotating video to see that the wavelength interpolation performance is consistently good across novel viewpoints.
+              <!-- Observe that interpolating wavelengths generalizes to new viewpoints, and training with 1/8th the wavelengths produces almost identical results as using all the wavelengths. -->
+            </p>
+            <!-- <a href="#hs-sweep-videos" data-action="collapse">Collapse/Expand</a> -->
+
+            <div class="is-full is-collapsible" id="hs-sweep-videos" style="width: 80%; margin-left: auto;">
+              <div class="columns is-full">
+                <div class="column">
+                  <h1 class="title is-5">Trained on every wavelength</h1>
+                </div>
+                <div class="column">
+                  <h1 class="title is-5">Trained on every 2nd wavelength</h1>
+                </div>
+                <div class="column">
+                  <h1 class="title is-5">Trained on every 4th wavelength</h1>
+                </div>
+                <div class="column">
+                  <h1 class="title is-5">Trained on every 8th wavelength</h1>
+                </div>
+              </div>
+              <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+              </video>
+              <!-- <video autoplay muted loop>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT1/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
               </video>
               <video autoplay muted loop>
@@ -265,10 +315,11 @@
               </video>
               <video autoplay muted loop>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/PINECONE/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
-              </video>
+              </video> -->
             </div>
           </div>
 
+          <!-- Super-resolution as Images -->
           <div class="column is-full">
             HS-NeRF:<br />Hyperspectral Super-resolution (interpolation)
             <br />
