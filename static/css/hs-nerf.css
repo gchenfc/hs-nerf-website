@@ -94,3 +94,19 @@
 .is-collapsible > .is-full {
   width: 100%;
 }
+/* 
+.is-collapsible > .is-four-fifths {
+  width: 80%;
+} */
+
+/* .collapsible-head {
+  background-color: lightblue;
+} */
+
+.is-collapsible {
+  padding-top: 20px;
+  /* margin-top: -20px; */
+}
+/* .is-collapsible.is-active {
+  margin-top: 0px;
+} */
