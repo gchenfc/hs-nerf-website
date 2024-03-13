@@ -230,10 +230,12 @@
   <!-- Super-resolution -->
   <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3">Super-resolution (Wavelength Interpolation)</h2>
+      <div class="container box">
+        <a href="#super-resolution" data-action="collapse">
+          <h2 class="title is-3">Super-resolution (Wavelength Interpolation)</h2>
+        </a>
         <!-- <div class="columns is-centered has-text-centered"> -->
-        <div class="column is-centered has-text-centered">
+        <div class="column is-centered has-text-centered is-collapsible" id="super-resolution">
 
           <!-- HS Sweep, camera stationary -->
           <div class="column is-full box">
@@ -283,10 +285,12 @@
           <div class="column is-full box">
             <!-- Display the labels 128 64 32 16 centered and above the video -->
             <!-- <h3 class="title is-4">Videos: Sweep hyperspectral wavelengths</h3> -->
-            <h3 class="title is-4"><a href="#hs-sweep-videos" data-action="collapse">Videos: Sweep hyperspectral wavelengths & Fly Camera &nbsp;&nbsp;[+]</a></h3>
-            <p>Watch this rotating video to see that the wavelength interpolation performance is consistently good across novel viewpoints.
-              <!-- Observe that interpolating wavelengths generalizes to new viewpoints, and training with 1/8th the wavelengths produces almost identical results as using all the wavelengths. -->
-            </p>
+            <a href="#hs-sweep-videos" data-action="collapse">
+              <h3 class="title is-4">Videos: Sweep hyperspectral wavelengths & Moving Camera &nbsp;&nbsp;[+]</h3>
+              <p>Watch this rotating video to see that the wavelength interpolation performance is consistently good across novel viewpoints.
+                <!-- Observe that interpolating wavelengths generalizes to new viewpoints, and training with 1/8th the wavelengths produces almost identical results as using all the wavelengths. -->
+              </p>
+            </a>
             <!-- <a href="#hs-sweep-videos" data-action="collapse">Collapse/Expand</a> -->
 
             <div class="is-full is-collapsible" id="hs-sweep-videos" style="width: 80%; margin-left: auto;">
@@ -320,98 +324,107 @@
           </div>
 
           <!-- Super-resolution as Images -->
-          <div class="column is-full">
-            HS-NeRF:<br />Hyperspectral Super-resolution (interpolation)
-            <br />
-            <div class="hs-legend">
-              Key:
-              <div class="in-training">Wavelength in train set</div>
-              <div class="in-eval">Wavelength NOT in train set</div>
-            </div>
-            <div class="hs-image-grid-container">
-              <div class="grid-item pinned-col">
-                <h1 class="item-header"></h1>
-                <div class="placeholder-img">Ground Truth (some withheld)</div>
-                <div class="placeholder-img">Trained on every wavelength</div>
-                <div class="placeholder-img">Trained on every 2nd wavelength</div>
-                <div class="placeholder-img">Trained on every 4th wavelength</div>
-                <div class="placeholder-img">Trained on every 8th wavelength</div>
-                <div class="placeholder-img">Trained on every 16th wavelength</div>
+          <div class="column is-full box">
+            
+            <a href="#hs-sweep-images" data-action="collapse">
+              <h3 class="title is-4">Image Grid: Sweep hyperspectral wavelengths &nbsp;&nbsp;[+]</h3>
+              <p>Inspect the individual rendered images by wavelength and amount of interpolation.
+                <br />
+                This is the same as the video above, but in image form to allow for closer inspection.
+              </p>
+            </a>
+
+            <div class="column is-full is-collapsible" id="hs-sweep-images">
+              <div class="hs-legend">
+                Key:
+                <div class="in-training">Wavelength in train set</div>
+                <div class="in-eval">Wavelength NOT in train set</div>
               </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 0 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 1 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 2 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 3 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 4 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 5 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 6 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">Ch 6 (400nm)</h1>
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                  <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-              </div>
-              <div class="grid-item">
-                  <h1 class="item-header">TODO: all the rest</h1>
+              <div class="hs-image-grid-container">
+                <div class="grid-item pinned-col">
+                  <h1 class="item-header"></h1>
+                  <div class="placeholder-img">Ground Truth (some withheld)</div>
+                  <div class="placeholder-img">Trained on every wavelength</div>
+                  <div class="placeholder-img">Trained on every 2nd wavelength</div>
+                  <div class="placeholder-img">Trained on every 4th wavelength</div>
+                  <div class="placeholder-img">Trained on every 8th wavelength</div>
+                  <div class="placeholder-img">Trained on every 16th wavelength</div>
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 0 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 1 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 2 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 3 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 4 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 5 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 6 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">Ch 6 (400nm)</h1>
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                </div>
+                <div class="grid-item">
+                    <h1 class="item-header">TODO: all the rest</h1>
+                </div>
               </div>
             </div>
           </div>
@@ -466,7 +479,7 @@
 
   <!-- End of Statcounter Code -->
 
-  <script src="static/js/bulma-collapsible.min.js"></script>
+  <script src="static/js/bulma-collapsible.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize all elements with '.is-collapsible' class
