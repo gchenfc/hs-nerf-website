@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   <link rel="stylesheet" href="static/css/index.css" />
   <link rel="stylesheet" href="static/css/hs-nerf.css" />
+  <link rel="stylesheet" href="static/css/bulma-collapsible.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -375,6 +376,14 @@
   <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
   <!-- End of Statcounter Code -->
+
+  <script src="static/js/bulma-collapsible.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize all elements with '.is-collapsible' class
+      bulmaCollapsible.attach('.is-collapsible');
+    });
+  </script>
 </body>
 
 </html>
