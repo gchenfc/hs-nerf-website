@@ -216,7 +216,10 @@
         <h2 class="title is-3">Ablations (method)</h2>
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            testing 1234
+            <!-- order=(1 2 4a 4 3 5) -->
+            <video autoplay muted loop>
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT1/labeled_channel_circular_camera_path-Method_montage.mp4" type='video/mp4' />
+            </video>
           </div>
         </div>
       </div>
@@ -228,9 +231,44 @@
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
-        <!-- Paper video. -->
-        <h2 class="title is-3">Super-resolution</h2>
-        <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Super-resolution (Wavelength Interpolation)</h2>
+        <!-- <div class="columns is-centered has-text-centered"> -->
+        <div class="column is-centered has-text-centered">
+
+          <!-- HS Sweep, camera moving -->
+          <div class="column is-full box">
+            <!-- Display the labels 128 64 32 16 centered and above the video -->
+            <!-- <h3 class="title is-4">Videos: Sweep hyperspectral wavelengths</h3> -->
+            <h3 class="title is-4"><a href="#hs-sweep-videos" data-action="collapse">Videos: Sweep hyperspectral wavelengths &nbsp;&nbsp;[+]</a></h3>
+            <!-- <a href="#hs-sweep-videos" data-action="collapse">Collapse/Expand</a> -->
+
+            <div class="is-full is-collapsible" id="hs-sweep-videos">
+              <div class="columns is-full">
+                <div class="column is-3">
+                  <h1 class="title is-5">Trained on every wavelength</h1>
+                </div>
+                <div class="column is-3">
+                  <h1 class="title is-5">Trained on every 2nd wavelength</h1>
+                </div>
+                <div class="column is-3">
+                  <h1 class="title is-5">Trained on every 4th wavelength</h1>
+                </div>
+                <div class="column is-3">
+                  <h1 class="title is-5">Trained on every 8th wavelength</h1>
+                </div>
+              </div>
+              <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT1/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+              </video>
+              <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT2/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+              </video>
+              <video autoplay muted loop>
+                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/PINECONE/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+              </video>
+            </div>
+          </div>
+
           <div class="column is-full">
             HS-NeRF:<br />Hyperspectral Super-resolution (interpolation)
             <br />
