@@ -182,13 +182,14 @@
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container box">
-        <!-- Sample-Section -->
-        <a href="#Sample-Section" data-action="collapse">
-          <h2 class="title is-3">Raw Images</h2>
-          <p>Here are some examples of raw images taken by the hyperspectral camera</p>
+        <!-- raw-images -->
+        <a href="#raw-images" data-action="collapse">
+          <h2 class="title is-3">Raw Dataset Images</h2>
+          <p>Here are some examples of raw images taken by the hyperspectral cameras.</p>
         </a>
 
-        <div class="is-centered has-text-centered is-collapsible" id="Sample-Section">
+        <div class="is-centered has-text-centered is-collapsible" id="raw-images">
+          <h1 class="title is-3">BaySpec Camera Datasets</h1>
           <h1 class="title is-4">Anacampseros</h1>
           <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_FAKEPLANT1_2.png" />
           <br />
@@ -201,6 +202,9 @@
           <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_PINECONE_0.png" />
           <br />
           <br />
+          <br />
+          <br />
+          <h1 class="title is-3">Surface Optics Camera Datasets</h1>
           <h1 class="title is-4">Rosemary</h1>
           <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_rosemary_white_2.png" />
           <br />
@@ -221,37 +225,99 @@
   </section>
   <!-- End Raw Images -->
 
-  <!-- Architecture -->
+  <!-- RGB Baseline Comparisons -->
   <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <!-- Paper video. -->
-        <h2 class="title is-3">HS-NeRF Architecture</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            testing 1234
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Architecture -->
+      <div class="container box">
+        <!-- rgb -->
+        <a href="#rgb" data-action="collapse">
+          <h2 class="title is-3">RGB Baseline Comparisons</h2>
+          <p>Our HS-NeRF approach (Ours-Hyper) using 128 channels clearly outperforms NeRFs using only RGB</p>
+        </a>
 
-  <!-- Results -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container">
-        <!-- Paper video. -->
-        <h2 class="title is-3">Results</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            testing 1234
+        <div class="is-centered has-text-centered is-collapsible" id="rgb">
+
+          <div class="column" style="width:25%;float: left;">
+            Sample <u>ground truth</u> image
           </div>
+          <div class="column" style="width:75%;margin-left:auto;">
+            <div class="columns table-header is-full">
+              <div class="column">
+                <u>nerfacto</u><br />
+                (baseline)
+              </div>
+              <div class="column">
+                <u>Ours-RGB</u><br />
+                (discrete 3ch radiance & transmittance)
+              </div>
+              <div class="column">
+                <u>Ours-Cont</u><br />
+                (continuous 3ch radiance & transmittance)
+              </div>
+              <div class="column">
+                <u>Ours-Hyper</u><br />
+                (HS-NeRF, continuous 128ch)
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: stretch;">
+            <div style="width: 25%; background-color: tranpsarent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/frame_00137.jpg" style="max-height: 100%;"/>
+            </div>
+            <video autoplay muted loop controls style="width: 75%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/labeled_black_rgb-montage.mp4" type='video/mp4' />
+            </video>
+          </div>
+          <br />
+          <div style="display: flex; align-items: stretch;">
+            <div style="width: 25%; background-color: transparent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/frame_00137.jpg" style="max-height: 100%;"/>
+            </div>
+            <video autoplay muted loop controls style="width: 75%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/labeled_camera_path_single_loop_7s_narrow-rgb-montage.mp4" type='video/mp4' />
+            </video>
+          </div>
+          <br />
+          <div style="display: flex; align-items: stretch;">
+            <div style="width: 25%; background-color: tranpsarent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/white_frame_00137.jpg" style="max-height: 100%;"/>
+            </div>
+            <video autoplay muted loop controls style="width: 75%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_white_rgb-montage.mp4" type='video/mp4' />
+            </video>
+          </div>
+          <div style="display: flex; align-items: stretch;">
+            <div style="width: 25%; background-color: tranpsarent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/black_frame_00137.jpg" style="max-height: 100%;"/>
+            </div>
+            <video autoplay muted loop controls style="width: 75%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_black_rgb-montage.mp4" type='video/mp4' />
+            </video>
+          </div>
+          <br />
+          <div style="display: flex; align-items: stretch;">
+            <video autoplay muted loop controls style="width: 25%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Rosemary_GT_reversed.mp4" type='video/mp4' />
+            </video>
+            <video autoplay muted loop controls style="width: 75%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Rosemary_RGB.mp4" type='video/mp4' />
+            </video>
+          </div>
+          <div style="display: flex; align-items: stretch;">
+            <video autoplay muted loop controls style="width: 25%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Basil_GT_reversed.mp4" type='video/mp4' />
+            </video>
+            <video autoplay muted loop controls style="width: 75%;">
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Basil_RGB.mp4" type='video/mp4' />
+            </video>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
-  <!-- End Results -->
+  <!-- End RGB Baseline Comparisons -->
 
   <!-- Depth -->
   <section class="hero is-small is-light">
@@ -275,17 +341,20 @@
             <div class="column" style="width:66.66%;margin-left:auto;margin-right: auto;">
               <div class="columns table-header is-full">
                 <div class="column">
-                  nerfacto<br />
+                  <u>nerfacto</u><br />
                   (baseline)
                 </div>
                 <div class="column">
-                  Ours-RGB
+                  <u>Ours-RGB</u><br />
+                  (discrete 3ch radiance & transmittance)
                 </div>
                 <div class="column">
-                  Ours-Cont
+                  <u>Ours-Cont</u><br />
+                  (continuous 3ch radiance & transmittance)
                 </div>
                 <div class="column">
-                  Ours-Hyper
+                  <u>Ours-Hyper</u><br />
+                  (HS-NeRF, continuous 128ch)
                 </div>
               </div>
             </div>
