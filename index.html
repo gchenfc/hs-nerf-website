@@ -893,12 +893,60 @@
   <!-- Camera Image Sensor Simulation -->
   <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <!-- Paper video. -->
-        <h2 class="title is-3">Camera Image Sensor Simulation</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            testing 1234
+      <div class="container box">
+        <a href="#camera-sim" data-action="collapse">
+          <h2 class="title is-3">Camera Image Sensor Simulation</h2>
+          <p>Hyperspectral NeRFs allow us to simulate arbitrary camera image sensors from a single reference image.</p>
+        </a>
+
+        <div class="is-centered is-collapsible content" id="camera-sim">
+          Different camera imaging sensors have different spectral responses which produce unique image qualities.  Similarly, filters are often used by photographers to achieve different artistic effects.  From a hyperspectral image, we theoretically have enough information to reconstruct what the image would look like if it were taken with a different camera sensor or filter.
+          <!-- In practice, this is challenging due to the limited quality of hyperspectral images.  However, because NeRF incorporates the information from many images, it may be possible to produce images of quality better than the source images. -->
+          <br />
+          <br />
+          We demonstrate results using the following procedure:
+          <ol>
+            <li>Construct a hyperspectral NeRF using HS-NeRF</li>
+            <li>Take a single photo with the target camera</li>
+            <li>Localize the target photo's camera pose in the NeRF scene</li>
+            <li>Render a hyperspectral image for that camera pose</li>
+            <li>Run a least-squares optimization to find spectral response functions which result in a simulated photo that best matches the target photo</li>
+            <li>Render the simulated photo</li>
+          </ol>
+          <br />
+          For each scene, we present simulated photos for an iPhone photo with various digital filters applied.
+          <br />
+          A number of different target photos (left of each pair) can be simulated by HS-NeRF (right of each pair) with excellent agreement.
+          <br />
+          Note that the agreement often appears so good/consistent that it seems as though a filter was applied to both target and simulation together, but the filters were only applied to the target photos, then the simulations were generated according to the above procedure.
+          <br />
+          <br />
+          <div class="columns is-full">
+            <div class="column is-one-third">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_silvertone.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_saturated.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_dramatic-warm.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_vivid.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_gray.png" />
+              <!-- <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_saturated.png" /> -->
+            </div>
+            <div class="column is-one-third">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_gloomy.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_old.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_warm.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_gray.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_desaturated.png" />
+            </div>
+            <div class="column is-one-third">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_desaturated.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_old.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_warm.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_gray_bak.png" />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_cool.png" />
+            </div>
           </div>
         </div>
       </div>
