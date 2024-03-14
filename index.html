@@ -488,7 +488,7 @@
           <div class="box">
             <a href="#ablations-fixed-sweep" data-action="collapse">
               <h2 class="title is-4">Fixed camera viewpoint not in training set (wavelength sweep)</h2>
-              This video is the easiest for comparing the performance between different methods.
+              <p>This video is the easiest for comparing the performance between different methods.</p>
             </a>
             <div class="is-centered has-text-centered is-collapsible" id="ablations-fixed-sweep">
               In this video, t = 0s depicts the shortest wavelength (image channel 0) and we depict progressively longer wavelengths until the end (t = 5s) depicts the longest wavelength (image channel 127).  This camera view was not in the training set.
@@ -534,9 +534,39 @@
           <div class="box">
             <a href="#ablations-flying-6wide" data-action="collapse">
               <h2 class="title is-4">Moving camera viewpoints (6 wavelengths)</h2>
-              This video shows the camera moving to evidence that the NeRF's performance is consistently good across novel viewpoints.
+              <p>This video shows the camera moving to evidence that the NeRF's performance is consistently good across novel viewpoints.</p>
             </a>
             <div class="is-centered has-text-centered is-collapsible" id="ablations-flying-6wide">
+
+              <div class="message" style="width:fit-content;margin:auto;padding: 10px 20px;">
+                Select which scene to view:
+                <div class="has-text-justified" style="width:fit-content;margin:auto">
+                  <input type="radio" id="scene1" name="video" value="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT1/abl-method-montage_half.mp4" onchange="changeVideoSource()">
+                  <label for="scene1">Anacampseros</label>
+                  <br />
+                  <input type="radio" id="scene2" name="video" value="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT2/abl-method-montage_half.mp4" onchange="changeVideoSource()" checked>
+                  <label for="scene2">Caladium</label>
+                  <br />
+                  <input type="radio" id="scene3" name="video" value="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/PINECONE/abl-method-montage_half.mp4" onchange="changeVideoSource()">
+                  <label for="scene3">Pinecone</label>
+                </div>
+              </div>
+              <br />
+              
+              <script>
+                function changeVideoSource() {
+                    var radios = document.getElementsByName('video');
+                    var videoPlayer = document.getElementById('6wavelengths_video_player');
+
+                    for(var i = 0; i < radios.length; i++) {
+                        if(radios[i].checked) {
+                            videoPlayer.src = radios[i].value;
+                            break;
+                        }
+                    }
+                }
+              </script>
+
               This grid of videos shows different ablation variations as columns and different wavelengths as rows.
               <div class="column" style="width:85.714286%;margin-left:auto;">
                 <div class="columns table-header is-full">
@@ -588,7 +618,7 @@
                 </div>
               </div>
               <div style="width:85.714286%;margin-left:auto;">
-                <video autoplay muted loop controls>
+                <video autoplay muted loop controls id="6wavelengths_video_player">
                   <!-- <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT2/abl-method-montage.mp4" type='video/mp4' /> -->
                   <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT2/abl-method-montage_half.mp4" type='video/mp4' />
                 </video>
@@ -599,7 +629,7 @@
           <div class="box">
             <a href="#ablations-flying-sweep" data-action="collapse">
               <h2 class="title is-4">Moving camera viewpoints (wavelength sweep)</h2>
-              This video shows the camera moving simultaneously while the wavelength sweeps to evidence that the NeRF's performance is consistently good across novel viewpoints over all wavelengths.
+              <p>This video shows the camera moving simultaneously while the wavelength sweeps to evidence that the NeRF's performance is consistently good across novel viewpoints over all wavelengths.</p>
             </a>
             <div class="is-centered has-text-centered is-collapsible" id="ablations-flying-sweep">
               In this video, t = 0s depicts the shortest wavelength (image channel 0) and we depict progressively longer wavelengths until the end (t = 5s) depicts the longest wavelength (image channel 127).  This camera view was not in the training set.
