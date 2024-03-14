@@ -51,7 +51,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              Hyperspectral Neural Radiance Fields
+              Hyperspectral Neural Radiance Fields, Supplementary Videos/Images
             </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
@@ -123,7 +123,7 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <video poster="" id="tree" autoplay muted loop height="100%">
           <!-- Your video here -->
           <source src="static/videos/Rosemary_RGB.mp4"
         type="video/mp4">
@@ -137,7 +137,7 @@
   <!-- End teaser video -->
 
   <!-- Paper abstract -->
-  <section class="section hero is-light">
+  <section class="section hero is-light" style="display: none;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -211,14 +211,69 @@
   <!-- Ablations -->
   <section class="hero is-small is-light">
     <div class="hero-body">
-      <div class="container">
-        <!-- Paper video. -->
-        <h2 class="title is-3">Ablations (method)</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
+      <div class="container box">
+        <!-- Ablations -->
+        <a href="#ablations" data-action="collapse">
+          <h2 class="title is-3">Ablations - Hyperspectral Sweep</h2>
+          <p>Qualitatively, our stated approach appears to be best, but slightly different architectures are not significantly worse.</p>
+        </a>
+
+        <div class="is-centered has-text-centered is-collapsible is-active" id="ablations">
+          <div class="column has-text-justified">
+            In the following video, t = 0s depicts the shortest wavelength (image channel 0) and we depict progressively longer wavelengths until the end (t = 5s) depicts the longest wavelength (image channel 127).  The camera viewpoint is not in the training set.
+            <br />
+            <br />
+            Careful observation reveals that the networks using
+              <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+            (including ours) tend to be the most accurate in terms of absolute intensity (see for example that the other networks tend to over-estimate the leaf brightnesses in the middle row).
+            Meanwhile, the network using
+              <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>2</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+            often appears fuzzy, which suggests that mixing together the spatial and wavelength information is not as efficient.
+            Finally, although the networks uing 
+              <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+            generally appear slightly sharper than ours, they do not have a continuous wavelength representation so they do not as naturally interpolate wavelengths and, as mentioned, they tend to have slightly less accurate absolute intensities (e.g. on the middle row's leaf brightness).
+          </div>
+
+          <div class="column">
+            <div class="columns table-header is-full">
+              <div class="column">
+                <h1 class="title is-5">GROUND TRUTH</h1>
+              </div>
+              <div class="column">
+                <h1 class="title is-5">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>0</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                </h1>
+              </div>
+              <div class="column">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+              </div>
+              <div class="column">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>0</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                (ours)
+              </div>
+              <div class="column">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>&#x3C3;</mi></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+              </div>
+              <div class="column">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+              </div>
+              <div class="column">
+                <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>&#x3C3;</mi></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mi>&#x3BB;</mi></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+              </div>
+            </div>
+          </div>
+          <div>
             <!-- order=(1 2 4a 4 3 5) -->
-            <video autoplay muted loop>
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT1/labeled_channel_circular_camera_path-Method_montage.mp4" type='video/mp4' />
+            <video autoplay muted loop controls>
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_Method_montage.mp4" type='video/mp4' />
+            </video>
+          </div>
+          <div class="column has-text-justified">
+            This bottom video shows the camera moving to evidence that the NeRF's performance is consistently good across novel viewpoints.
+          </div>
+          <div style="width:85.714286%;margin-left:auto;">
+            <video autoplay muted loop controls>
+              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-Method_montage.mp4" type='video/mp4' />
             </video>
           </div>
         </div>
@@ -235,7 +290,7 @@
           <h2 class="title is-3">Super-resolution (Wavelength Interpolation)</h2>
         </a>
         <!-- <div class="columns is-centered has-text-centered"> -->
-        <div class="column is-centered has-text-centered is-collapsible" id="super-resolution">
+        <div class="is-centered has-text-centered is-collapsible" id="super-resolution">
 
           <!-- HS Sweep, camera stationary -->
           <div class="column is-full box">
@@ -248,34 +303,38 @@
               Furthermore, even withholding 87.5% of wavelengths from the training set has marginal impact on accuracy.</p>
             </a>
 
-            <div class="is-full is-collapsible" id="hs-sweep-videos-stationary">
-              <div class="columns is-full">
-                <div class="column">
-                  <h1 class="title is-5">GROUND TRUTH</h1>
-                </div>
-                <div class="column">
-                  <h1 class="title is-5">Trained on every wavelength</h1>
-                </div>
-                <div class="column">
-                  <h1 class="title is-5">Trained on every 2nd wavelength</h1>
-                </div>
-                <div class="column">
-                  <h1 class="title is-5">Trained on every 4th wavelength</h1>
-                </div>
-                <div class="column">
-                  <h1 class="title is-5">Trained on every 8th wavelength</h1>
+            <div class="is-centered has-text-centered is-collapsible" id="hs-sweep-videos-stationary">
+              <div class="column">
+                <div class="columns is-full table-header">
+                  <div class="column">
+                    <h1 class="title is-5">GROUND TRUTH</h1>
+                  </div>
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every wavelength</h1>
+                  </div>
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every 2nd wavelength</h1>
+                  </div>
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every 4th wavelength</h1>
+                  </div>
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every 8th wavelength</h1>
+                  </div>
                 </div>
               </div>
-              <video autoplay muted loop>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
-              </video>
-              <!-- <video autoplay muted loop>
+              <div>
+                <video autoplay muted loop controls>
+                  <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+                </video>
+              </div>
+              <!-- <video autoplay muted loop controls>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT1/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
               </video>
-              <video autoplay muted loop>
+              <video autoplay muted loop controls>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT2/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
               </video>
-              <video autoplay muted loop>
+              <video autoplay muted loop controls>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/PINECONE/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
               </video> -->
             </div>
@@ -293,31 +352,35 @@
             </a>
             <!-- <a href="#hs-sweep-videos" data-action="collapse">Collapse/Expand</a> -->
 
-            <div class="is-full is-collapsible" id="hs-sweep-videos" style="width: 80%; margin-left: auto;">
-              <div class="columns is-full">
-                <div class="column">
-                  <h1 class="title is-5">Trained on every wavelength</h1>
-                </div>
-                <div class="column">
-                  <h1 class="title is-5">Trained on every 2nd wavelength</h1>
-                </div>
-                <div class="column">
-                  <h1 class="title is-5">Trained on every 4th wavelength</h1>
-                </div>
-                <div class="column">
-                  <h1 class="title is-5">Trained on every 8th wavelength</h1>
+            <div class="is-centered has-text-centered is-collapsible" id="hs-sweep-videos" style="width: 80%; margin-left: auto;">
+              <div class="column">
+                <div class="columns is-full table-header">
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every wavelength</h1>
+                  </div>
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every 2nd wavelength</h1>
+                  </div>
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every 4th wavelength</h1>
+                  </div>
+                  <div class="column">
+                    <h1 class="title is-5">Trained on every 8th wavelength</h1>
+                  </div>
                 </div>
               </div>
-              <video autoplay muted loop>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
-              </video>
-              <!-- <video autoplay muted loop>
+              <div>
+                <video autoplay muted loop controls>
+                  <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+                </video>
+              </div>
+              <!-- <video autoplay muted loop controls>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT1/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
               </video>
-              <video autoplay muted loop>
+              <video autoplay muted loop controls>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT2/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
               </video>
-              <video autoplay muted loop>
+              <video autoplay muted loop controls>
                 <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/PINECONE/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
               </video> -->
             </div>
