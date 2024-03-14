@@ -790,96 +790,107 @@
               </p>
             </a>
 
+            <script>
+              populate_table_every = (scene, increment) => 
+              function() {
+                const col0 = document.getElementById('col0');
+                const col1 = document.getElementById('col1');
+                const col2 = document.getElementById('col2');
+                const col3 = document.getElementById('col3');
+                const col4 = document.getElementById('col4');
+                const col5 = document.getElementById('col5');
+                function create_label(text) {
+                  const label = document.createElement('div');
+                  label.classList.add('placeholder-img');
+                  label.textContent = text;
+                  return label;
+                }
+                function add_img(url, i, every) {
+                  const img = document.createElement('img');
+                  if (i % every == 0) {
+                    img.classList.add('in-training');
+                  } else {
+                    img.classList.add('in-eval');
+                  }
+                  img.src = url;
+                  return img;
+                }
+                console.log(increment);
+                for (let i = 0; i < 128; i += increment) {
+                  col0.appendChild(create_label(`Ch ${i}`));
+                  col1.appendChild(add_img('https://hyperspectral-nerf.github.io/supplemental-results-data/eval_images/' + scene + '/GROUND_TRUTH/jet_' + i + '.png', i, 1));
+                  col2.appendChild(add_img('https://hyperspectral-nerf.github.io/supplemental-results-data/eval_images/' + scene + '/every_1/jet_' + i + '.png', i, 1));
+                  col3.appendChild(add_img('https://hyperspectral-nerf.github.io/supplemental-results-data/eval_images/' + scene + '/every_2/jet_' + i + '.png', i, 2));
+                  col4.appendChild(add_img('https://hyperspectral-nerf.github.io/supplemental-results-data/eval_images/' + scene + '/every_4/jet_' + i + '.png', i, 4));
+                  col5.appendChild(add_img('https://hyperspectral-nerf.github.io/supplemental-results-data/eval_images/' + scene + '/every_8/jet_' + i + '.png', i, 8));
+                }
+              }
+              document.addEventListener('DOMContentLoaded', populate_table_every('FAKEPLANT2', 11));
+
+              function clear_table() {
+                for (let coli = 0; coli < 6; ++coli) {
+                  const col = document.getElementById('col' + coli);
+                  while (col.children.length > 1) {
+                    col.children[0].nextElementSibling.remove();
+                  }
+                }
+              }
+
+              function load_all() {
+                // first clear all but the first row in each column
+                clear_table();
+                const scene = document.querySelector('input[name="imageSweepScene"]:checked').value;
+                populate_table_every(scene, 1)();
+              }
+
+              function changeImageSweepScene() {
+                clear_table();
+                const scene = document.querySelector('input[name="imageSweepScene"]:checked').value;
+                populate_table_every(scene, 11)();
+              }
+            </script>
+
             <div class="column is-full is-collapsible" id="hs-sweep-images">
+              <div>
+                Currently only every 11th wavelength is loaded.  <button onclick="load_all()">Load All Images (about 200MB / scene)</button>
+
+                <div class="message" style="width:fit-content;margin:auto;padding: 10px 20px;">
+                  Select which scene to view:
+                  <div class="has-text-justified" style="width:fit-content;margin:auto">
+                    <input type="radio" id="hs_im_scene1" name="imageSweepScene" value="FAKEPLANT1" onchange="changeImageSweepScene()">
+                    <label for="hs_im_scene1">Anacampseros</label>
+                    <br />
+                    <input type="radio" id="hs_im_scene2" name="imageSweepScene" value="FAKEPLANT2" onchange="changeImageSweepScene()" checked>
+                    <label for="hs_im_scene2">Caladium</label>
+                    <br />
+                    <input type="radio" id="hs_im_scene3" name="imageSweepScene" value="PINECONE" onchange="changeImageSweepScene()">
+                    <label for="hs_im_scene3">Pinecone</label>
+                  </div>
+                </div>
+              </div>
               <div class="hs-legend">
                 Key:
                 <div class="in-training">Wavelength in train set</div>
                 <div class="in-eval">Wavelength NOT in train set</div>
               </div>
-              <div class="hs-image-grid-container">
-                <div class="grid-item pinned-col">
+              <div class="hs-image-grid-container" style="max-height: 800px;">
+                <div class="grid-item pinned-col" id="col0" style="width: 100px;">
                   <h1 class="item-header"></h1>
-                  <div class="placeholder-img">Ground Truth (some withheld)</div>
-                  <div class="placeholder-img">Trained on every wavelength</div>
-                  <div class="placeholder-img">Trained on every 2nd wavelength</div>
-                  <div class="placeholder-img">Trained on every 4th wavelength</div>
-                  <div class="placeholder-img">Trained on every 8th wavelength</div>
-                  <div class="placeholder-img">Trained on every 16th wavelength</div>
                 </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 0 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
+                <div class="grid-item" id="col1">
+                    <h1 class="item-header pinned-row">Ground Truth</h1>
                 </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 1 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                <div class="grid-item" id="col2">
+                    <h1 class="item-header pinned-row">Trained on every wavelength</h1>
                 </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 2 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                <div class="grid-item" id="col3">
+                    <h1 class="item-header pinned-row">Trained on every 2nd wavelength</h1>
                 </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 3 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
+                <div class="grid-item" id="col4">
+                    <h1 class="item-header pinned-row">Trained on every 4th wavelength</h1>
                 </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 4 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 5 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 6 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                </div>
-                <div class="grid-item">
-                    <h1 class="item-header">Ch 6 (400nm)</h1>
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-training" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                    <img src="static/images/placeholder.svg" class="in-eval" alt="Description">
-                </div>
-                <div class="grid-item">
-                    <h1 class="item-header">TODO: all the rest</h1>
+                <div class="grid-item" id="col5">
+                    <h1 class="item-header pinned-row">Trained on every 8th wavelength</h1>
                 </div>
               </div>
             </div>
