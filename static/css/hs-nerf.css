@@ -120,3 +120,9 @@
 .space {
   height: 10px;
 }
+
+.box .box {
+  background-color: #fafafa;
+  /* border-radius:15px; */
+  border: 1px solid #e0e0e0;
+}
