@@ -215,7 +215,7 @@
         <!-- Ablations -->
         <a href="#ablations" data-action="collapse">
           <h2 class="title is-3">Ablations</h2>
-          <p>Qualitatively, our stated approach appears to be best, but slightly different architectures are not significantly worse.</p>
+          <p>Qualitatively, our stated approach appears among the best, but slightly different architectures are not significantly worse.</p>
         </a>
 
         <div class="is-centered has-text-centered is-collapsible" id="ablations">
@@ -388,6 +388,97 @@
     </div>
   </section>
   <!-- End Ablations -->
+
+
+  <!-- Depth -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container box">
+        <!-- Depth -->
+        <a href="#Depth" data-action="collapse">
+          <h2 class="title is-3">Depth Maps</h2>
+          <p>
+            <!-- Depth maps provide a sanity check that our reconstructions are reasonable. -->
+            Depth maps can reveal issues with the 3D structures of NeRFs that are not immediately apparent in the rendered images.
+            <br />Qualitatively, ours is noticeably better than the rgb baselines, and is among the best of the ablations.</p>
+        </a>
+
+        <div class="is-centered has-text-centered is-collapsible is-active" id="Depth">
+
+          <h1 class="title is-3">RGB</h1>
+          Comparing the depth maps against RGB NeRF baselines, we find that our hyperspectral NeRF produces much better results.
+
+          <div class="is-centered has-text-centered">
+            <div class="column" style="width:66.66%;margin-left:auto;margin-right: auto;">
+              <div class="columns table-header is-full">
+                <div class="column">
+                  nerfacto<br />
+                  (baseline)
+                </div>
+                <div class="column">
+                  Ours-RGB
+                </div>
+                <div class="column">
+                  Ours-Cont
+                </div>
+                <div class="column">
+                  Ours-Hyper
+                </div>
+              </div>
+            </div>
+            <div style="width:66.66%;margin-left:auto;margin-right: auto;">
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/depth/FAKEPLANT1_rgb.png" type='video/mp4' />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/depth/FAKEPLANT2_rgb.png" type='video/mp4' />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/depth/PINECONE_rgb.png" type='video/mp4' />
+            </div>
+          </div>
+          <br />
+          <br />
+
+          <h1 class="title is-3">Ablations</h1>
+          Comparing the depth maps of ablations, ours and 
+            <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow><mrow><msub><mi>&#x3C3;</mi><mn>0</mn></msub></mrow><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+          are consistent and high quality, with the fewest spurious discontinuities in foreground surfaces.
+          <br />
+            <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow><mrow><msub><mi>&#x3C3;</mi><mn>1</mn></msub></mrow><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+          is notably strong for the Anacampseros scene, but finds a completely degenerate solution for both the Caladium and Pinecone scenes, likely due to low contrast between the foreground and background color (black).
+
+          <div class="is-centered has-text-centered">
+            <div class="column">
+              <div class="columns table-header is-full">
+                <div class="column">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>0</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                </div>
+                <div class="column">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                </div>
+                <div class="column">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>0</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                  <br />
+                  (ours)
+                </div>
+                <div class="column">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>&#x3C3;</mi></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                </div>
+                <div class="column">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>&#x3C3;</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                </div>
+                <div class="column">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>&#x3C3;</mi></mtd></mtr><mtr><mtd><mrow><msub><mi>P</mi><mi>&#x3BB;</mi></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/depth/FAKEPLANT1.png" type='video/mp4' />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/depth/FAKEPLANT2.png" type='video/mp4' />
+              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/depth/PINECONE.png" type='video/mp4' />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Super-resolution -->
   <section class="hero is-small is-light">
