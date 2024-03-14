@@ -110,3 +110,13 @@
 /* .is-collapsible.is-active {
   margin-top: 0px;
 } */
+
+.table-header {
+  border-left: 1px solid lightgray;
+}
+.table-header .column {
+  border-right: 1px solid lightgray;
+}
+.space {
+  height: 10px;
+}
