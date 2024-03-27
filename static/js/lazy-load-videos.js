@@ -1,6 +1,6 @@
 const options = {
   root: null,
-  rootMargin: "1000px",
+  rootMargin: "500px",
   // threshold: 0.5, // Trigger when img is 50% visible
 };
 
