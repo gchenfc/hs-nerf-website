@@ -42,6 +42,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="static/js/lazy-load-videos.js"></script>
 </head>
 
 <body>
@@ -124,8 +125,8 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <div class="" style="width:75%; margin:auto;">
-          <video poster="" id="tree" autoplay muted loop>
-            <!-- <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/hs-moving-camera.mp4" type="video/mp4"> -->
+          <video poster="static/supplemental-results-data/headline/hs-moving-camera.jpg" id="tree" autoplay muted loop>
+            <!-- <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/hs-moving-camera.mp4" type="video/mp4"> -->
             <source src="static/supplemental-results-data/headline/hs-moving-camera.mp4" type="video/mp4">
           </video>
         </div>
@@ -133,17 +134,17 @@
         <!-- <div poster="" id="tree" class="columns"> -->
           <!-- <div class="column">
             <video autoplay muted loop height="100%">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/labeled_black_rgb-montage_quarter.mp4" type="video/mp4">
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/labeled_black_rgb-montage_quarter.mp4" type="video/mp4">
             </video>
           </div>
           <div class="column">
             <video autoplay muted loop height="100%">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/labeled_black_rgb-montage_quarter.mp4" type="video/mp4">
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/labeled_black_rgb-montage_quarter.mp4" type="video/mp4">
             </video>
           </div> -->
           <!-- <div class="column">
             <video autoplay muted loop height="100%">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_black_rgb-montage_quarter.mp4" type="video/mp4">
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_black_rgb-montage_quarter.mp4" type="video/mp4">
             </video>
           </div> -->
           <!-- Math
@@ -154,22 +155,22 @@
           -->
           <!-- <div class="column">
             <video autoplay muted loop height="100%">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/labeled_ICCV-4a-128_quarter.mp4" type="video/mp4">
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/labeled_ICCV-4a-128_quarter.mp4" type="video/mp4">
             </video>
           </div> -->
           <!-- <div class="column is-three-fifths is-centered">
             <video autoplay muted loop height="100%">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/hs-moving-camera_scaled.mp4" type="video/mp4">
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/hs-moving-camera_scaled.mp4" type="video/mp4">
             </video>
           </div> -->
           <!-- <div class="column">
             <video autoplay muted loop height="100%">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/rgb_FAKEPLANT2.mp4" type="video/mp4">
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/rgb_FAKEPLANT2.mp4" type="video/mp4">
             </video>
           </div> -->
           <!-- <div class="column">
             <video autoplay muted loop height="100%">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/combined.mp4" type="video/mp4">
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/headline/combined.mp4" type="video/mp4">
             </video>
           </div> -->
         <!-- </div> -->
@@ -246,34 +247,34 @@
         <div class="is-centered has-text-centered is-collapsible" id="raw-images">
           <h1 class="title is-3">BaySpec Camera Datasets</h1>
           <h1 class="title is-4">Anacampseros</h1>
-          <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_FAKEPLANT1_2.png" />
+          <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_FAKEPLANT1_2.png" />
           <br />
           <br />
           <h1 class="title is-4">Caladium</h1>
-          <img src="static/supplemental-results-data/raw-images/hs_FAKEPLANT2_1.png" />
+          <img data-src="static/supplemental-results-data/raw-images/hs_FAKEPLANT2_1.png" />
           <br />
           <br />
           <h1 class="title is-4">Pinecone</h1>
-          <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_PINECONE_0.png" />
+          <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_PINECONE_0.png" />
           <br />
           <br />
           <br />
           <br />
           <h1 class="title is-3">Surface Optics Camera Datasets</h1>
           <h1 class="title is-4">Rosemary</h1>
-          <img src="static/supplemental-results-data/raw-images/hs_rosemary_white_2.png" />
+          <img data-src="static/supplemental-results-data/raw-images/hs_rosemary_white_2.png" />
           <br />
           <br />
           <h1 class="title is-4">Basil</h1>
-          <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_basil_white_2.png" />
+          <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_basil_white_2.png" />
           <br />
           <br />
           <h1 class="title is-4">Tools</h1>
-          <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_tools_white_2.png" />
+          <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_tools_white_2.png" />
           <br />
           <br />
           <h1 class="title is-4">Origami</h1>
-          <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_origami_white_2.png" />
+          <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/raw-images/hs_origami_white_2.png" />
         </div>
       </div>
     </div>
@@ -318,57 +319,57 @@
 
           <div style="display: flex; align-items: stretch;">
             <div style="width: 25%; background-color: tranpsarent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
-              <!-- <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/frame_00137.jpg" style="max-height: 100%;"/> -->
-              <img src="static/supplemental-results-data/rgb/FAKEPLANT1/frame_00137.jpg" style="max-height: 100%;"/>
+              <!-- <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/frame_00137.jpg" style="max-height: 100%;"/> -->
+              <img data-src="static/supplemental-results-data/rgb/FAKEPLANT1/frame_00137.jpg" style="max-height: 100%;"/>
             </div>
             <video autoplay muted loop controls style="width: 75%;">
-              <!-- <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/labeled_black_rgb-montage.mp4" type='video/mp4' /> -->
-              <source src="static/supplemental-results-data/rgb/FAKEPLANT1/labeled_black_rgb-montage.mp4" type='video/mp4' />
+              <!-- <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT1/labeled_black_rgb-montage.mp4" type='video/mp4' /> -->
+              <source data-src="static/supplemental-results-data/rgb/FAKEPLANT1/labeled_black_rgb-montage.mp4" type='video/mp4' />
             </video>
           </div>
           <br />
           <div style="display: flex; align-items: stretch;">
             <div style="width: 25%; background-color: transparent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
-              <!-- <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/frame_00137.jpg" style="max-height: 100%;"/> -->
-              <img src="static/supplemental-results-data/rgb/FAKEPLANT2/frame_00137.jpg" style="max-height: 100%;"/>
+              <!-- <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/frame_00137.jpg" style="max-height: 100%;"/> -->
+              <img data-src="static/supplemental-results-data/rgb/FAKEPLANT2/frame_00137.jpg" style="max-height: 100%;"/>
             </div>
             <video autoplay muted loop controls style="width: 75%;">
-              <!-- <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/labeled_camera_path_single_loop_7s_narrow-rgb-montage.mp4" type='video/mp4' /> -->
-              <source src="static/supplemental-results-data/rgb/FAKEPLANT2/labeled_camera_path_single_loop_7s_narrow-rgb-montage.mp4" type='video/mp4' />
+              <!-- <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/FAKEPLANT2/labeled_camera_path_single_loop_7s_narrow-rgb-montage.mp4" type='video/mp4' /> -->
+              <source data-src="static/supplemental-results-data/rgb/FAKEPLANT2/labeled_camera_path_single_loop_7s_narrow-rgb-montage.mp4" type='video/mp4' />
             </video>
           </div>
           <br />
           <div style="display: flex; align-items: stretch;">
             <div style="width: 25%; background-color: tranpsarent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/white_frame_00137.jpg" style="max-height: 100%;"/>
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/white_frame_00137.jpg" style="max-height: 100%;"/>
             </div>
             <video autoplay muted loop controls style="width: 75%;">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_white_rgb-montage.mp4" type='video/mp4' />
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_white_rgb-montage.mp4" type='video/mp4' />
             </video>
           </div>
           <div style="display: flex; align-items: stretch;">
             <div style="width: 25%; background-color: tranpsarent; display: flex; align-items: center; justify-content: center; margin-right:10px;">
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/black_frame_00137.jpg" style="max-height: 100%;"/>
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/black_frame_00137.jpg" style="max-height: 100%;"/>
             </div>
             <video autoplay muted loop controls style="width: 75%;">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_black_rgb-montage.mp4" type='video/mp4' />
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/rgb/PINECONE/labeled_black_rgb-montage.mp4" type='video/mp4' />
             </video>
           </div>
           <br />
           <div style="display: flex; align-items: stretch;">
             <video autoplay muted loop controls style="width: 25%;">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Rosemary_GT_reversed.mp4" type='video/mp4' />
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Rosemary_GT_reversed.mp4" type='video/mp4' />
             </video>
             <video autoplay muted loop controls style="width: 75%;">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Rosemary_RGB.mp4" type='video/mp4' />
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Rosemary_RGB.mp4" type='video/mp4' />
             </video>
           </div>
           <div style="display: flex; align-items: stretch;">
             <video autoplay muted loop controls style="width: 25%;">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Basil_GT_reversed.mp4" type='video/mp4' />
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Basil_GT_reversed.mp4" type='video/mp4' />
             </video>
             <video autoplay muted loop controls style="width: 75%;">
-              <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Basil_RGB.mp4" type='video/mp4' />
+              <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/SurfaceOptics/Basil_RGB.mp4" type='video/mp4' />
             </video>
           </div>
 
@@ -418,9 +419,9 @@
               </div>
             </div>
             <div style="width:66.66%;margin-left:auto;margin-right: auto;">
-              <img src="static/supplemental-results-data/depth/FAKEPLANT1_rgb.png" type='video/mp4' />
-              <img src="static/supplemental-results-data/depth/FAKEPLANT2_rgb.png" type='video/mp4' />
-              <img src="static/supplemental-results-data/depth/PINECONE_rgb.png" type='video/mp4' />
+              <img data-src="static/supplemental-results-data/depth/FAKEPLANT1_rgb.png" type='video/mp4' />
+              <img data-src="static/supplemental-results-data/depth/FAKEPLANT2_rgb.png" type='video/mp4' />
+              <img data-src="static/supplemental-results-data/depth/PINECONE_rgb.png" type='video/mp4' />
             </div>
           </div>
           <br />
@@ -460,9 +461,9 @@
               </div>
             </div>
             <div>
-              <img src="static/supplemental-results-data/depth/FAKEPLANT1.png" />
-              <img src="static/supplemental-results-data/depth/FAKEPLANT2.png" />
-              <img src="static/supplemental-results-data/depth/PINECONE.png" />
+              <img data-src="static/supplemental-results-data/depth/FAKEPLANT1.png" />
+              <img data-src="static/supplemental-results-data/depth/FAKEPLANT2.png" />
+              <img data-src="static/supplemental-results-data/depth/PINECONE.png" />
             </div>
           </div>
 
@@ -474,10 +475,10 @@
           </div>
           <div class="columns is-centered is-full">
             <div class="column is-one-third">
-              <img src="static/supplemental-results-data/point_clouds/FAKEPLANT1.png" />
+              <img data-src="static/supplemental-results-data/point_clouds/FAKEPLANT1.png" />
             </div>
             <div class="column is-one-third">
-              <img src="static/supplemental-results-data/point_clouds/FAKEPLANT2.png" />
+              <img data-src="static/supplemental-results-data/point_clouds/FAKEPLANT2.png" />
             </div>
           </div>
 
@@ -548,7 +549,7 @@
               <div>
                 <!-- order=(1 2 4a 4 3 5) -->
                 <video autoplay muted loop controls>
-                  <source src="static/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_Method_montage.mp4" type='video/mp4' />
+                  <source data-src="static/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_Method_montage.mp4" type='video/mp4' />
                 </video>
               </div>
             </div>
@@ -643,8 +644,8 @@
               </div>
               <div style="width:85.714286%;margin-left:auto;">
                 <video autoplay muted loop controls id="6wavelengths_video_player">
-                  <!-- <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT2/abl-method-montage.mp4" type='video/mp4' /> -->
-                  <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT2/abl-method-montage_half.mp4" type='video/mp4' />
+                  <!-- <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT2/abl-method-montage.mp4" type='video/mp4' /> -->
+                  <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/6wavelengths/FAKEPLANT2/abl-method-montage_half.mp4" type='video/mp4' />
                 </video>
               </div>
             </div>
@@ -685,7 +686,7 @@
               </div>
               <div style="width:85.714286%;margin-left:auto;">
                 <video autoplay muted loop controls>
-                  <source src="static/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-Method_montage.mp4" type='video/mp4' />
+                  <source data-src="static/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-Method_montage.mp4" type='video/mp4' />
                 </video>
               </div>
             </div>
@@ -742,17 +743,17 @@
               </div>
               <div>
                 <video autoplay muted loop controls>
-                  <source src="static/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+                  <source data-src="static/supplemental-results-data/stationary-renders-hs/all_labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
                 </video>
               </div>
               <!-- <video autoplay muted loop controls>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT1/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+                <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT1/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
               </video>
               <video autoplay muted loop controls>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT2/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+                <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/FAKEPLANT2/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
               </video>
               <video autoplay muted loop controls>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/PINECONE/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
+                <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/stationary-renders-hs/PINECONE/labeled_channel_stationary_everyNth-montage.mp4" type='video/mp4' />
               </video> -->
             </div>
           </div>
@@ -788,17 +789,17 @@
               </div>
               <div>
                 <video autoplay muted loop controls>
-                  <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+                  <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/all_labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
                 </video>
               </div>
               <!-- <video autoplay muted loop controls>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT1/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+                <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT1/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
               </video>
               <video autoplay muted loop controls>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT2/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+                <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/FAKEPLANT2/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
               </video>
               <video autoplay muted loop controls>
-                <source src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/PINECONE/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
+                <source data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/circular-renders-hs/PINECONE/labeled_channel_circular_camera_path-everyNth-montage.mp4" type='video/mp4' />
               </video> -->
             </div>
           </div>
@@ -836,7 +837,13 @@
                   } else {
                     img.classList.add('in-eval');
                   }
-                  img.src = url;
+                  // img.fetchpriority = "low";
+                  img.dataset.src = url;
+                  try {
+                    img_observer.observe(img);
+                  } catch (error) {
+                    console.log('Error in adding image to observer', error);
+                  }
                   return img;
                 }
                 console.log(increment);
@@ -958,29 +965,29 @@
           <br />
           <div class="columns is-full">
             <div class="column is-one-third">
-              <img src="static/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_silvertone.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_saturated.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_dramatic-warm.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_vivid.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_gray.png" />
-              <!-- <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_saturated.png" /> -->
+              <img data-src="static/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_silvertone.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_saturated.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_dramatic-warm.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_vivid.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_gray.png" />
+              <!-- <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT1/sidebyside_saturated.png" /> -->
             </div>
             <div class="column is-one-third">
-              <img src="static/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_gloomy.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_old.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_warm.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_gray.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_desaturated.png" />
+              <img data-src="static/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_gloomy.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_old.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_warm.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_gray.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/FAKEPLANT2/sidebyside_desaturated.png" />
             </div>
             <div class="column is-one-third">
-              <img src="static/supplemental-results-data/camera_sim/PINECONE/sidebyside.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_desaturated.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_old.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_warm.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_gray_bak.png" />
-              <img src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_cool.png" />
+              <img data-src="static/supplemental-results-data/camera_sim/PINECONE/sidebyside.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_desaturated.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_old.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_warm.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_gray_bak.png" />
+              <img data-src="https://hyperspectral-nerf.github.io/supplemental-results-data/camera_sim/PINECONE/sidebyside_cool.png" />
             </div>
           </div>
         </div>
