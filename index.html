@@ -45,6 +45,16 @@
   <script src="static/js/lazy-load-videos.js"></script>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W1VZKTQEKG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W1VZKTQEKG');
+</script>
+
 <body>
   <section class="hero">
     <div class="hero-body">
@@ -52,13 +62,21 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              Hyperspectral Neural Radiance Fields, Supplementary Videos/Images
+              Hyperspectral Neural Radiance Fields
             </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
+              <!-- <span class="author-block">
                 Anonymous ECCV 2024 Submission<br />Paper ID #5419,
-              </span>
+              </span> -->
+
+              <!-- Gerry Chen\inst{1}\orcidlink{0000-0002-1026-1760} \and
+Sunil Kumar Narayanan\inst{1} \and
+Thomas Gautier Ottou\inst{1} \and
+Benjamin Missaoui\inst{1}\orcidlink{0009-0008-9522-8214} \and
+Harsh Muriki\inst{1}\orcidlink{0009-0002-1200-8758} \and
+Cédric Pradalier\inst{2}\orcidlink{0000-0002-1746-2733} \and
+Yongsheng Chen\inst{1} -->
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -71,15 +89,15 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2403.14839.pdf" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
-                </span> -->
+                </span>
 
                 <!-- Supplementary PDF link -->
                 <span class="link-block">
@@ -92,26 +110,26 @@
                 </span>
 
                 <!-- Github link -->
-                <!-- <span class="link-block">
-                  <a href="https://github.com/" target="_blank"
+                <span class="link-block">
+                  <a href="https://github.com/gchenfc/nerfstudio" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                   </a>
-                </span> -->
+                </span>
 
                 <!-- ArXiv abstract Link -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2403.14839" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span> -->
+                </span>
               </div>
             </div>
           </div>
@@ -183,7 +201,7 @@
   <!-- End teaser video -->
 
   <!-- Paper abstract -->
-  <section class="section hero is-light" style="display: none;">
+  <section class="section hero">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -203,17 +221,15 @@
         </div>
       </div>
     </div>
+
+    <img src="static/images/overview.svg" alt="Overview Architecture Diagram" style="width: 100%; max-width: 1000px; margin: 40px auto 0 auto; display: block;"/>
   </section>
   <!-- End paper abstract -->
 
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container is-centered">
-        <p class="is-centered has-text-centered">Note: We have made our best effort to package all the most helpful/representative images&videos in the zip file, but some less critical images&videos were too large to include in the zip file so we have uploaded them to github (timestamped & version controlled) and serve the assets via github links here.
-          <br />
-          Should you wish to review without consideration of internet-downloaded images&videos, please feel free to turn off your internet and be aware that some videos may not display.</p>
-        <br />
-        <h1 class="title is-3 is-centered has-text-centered" style="margin:auto;">Tip: These are collapsible sections.<br />Please click on the headings to expand/collapse.</h1>
+        <h1 class="title is-5 is-centered has-text-centered">Tip: These are collapsible sections.<br />Please click on the headings to expand/collapse.</h1>
       </div>
     </div>
   </section>
@@ -698,6 +714,9 @@
   </section>
   <!-- End Ablations -->
 
+  <section class="hero is-small is-light">
+    <h1 class="title is-2 is-centered has-text-centered">Applications</h1>
+  </section>
   <!-- Super-resolution -->
   <section class="hero is-small is-light">
     <div class="hero-body">
@@ -995,6 +1014,35 @@
     </div>
   </section>
   <!-- End Camera Image Sensor Simulation -->
+
+  <!-- Start citation block -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container box column is-three-fifths">
+        <h2 class="title is-3">BibTeX</h2>
+        <!-- Copy button -->
+        <button class="button is-primary is-small" onclick="copyToClipboard('bibtex-code')">Copy</button>
+        <script>
+          function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId);
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+          }
+        </script>
+        <!-- BibTeX code -->
+        <div id="bibtex-code"><pre><code>@article{Chen24arxiv_HS-NeRF,
+  title={Hyperspectral Neural Radiance Fields},
+  author={Gerry Chen and Sunil Kumar Narayanan and Thomas Gautier Ottou and Benjamin Missaoui and Harsh Muriki and Cédric Pradalier and Yongsheng Chen},
+  journal={arXiv preprint arXiv:2403.14839},
+  year={2024}
+}</code></pre></div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container">
