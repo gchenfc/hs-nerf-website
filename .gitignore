@@ -1,3 +1,5 @@
 potree
 static/point_clouds/*.las_converted
 static/point_clouds/caladium.pcd
+las2ply.ipynb
+test.html
