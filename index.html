@@ -73,7 +73,7 @@
                 <a href="https://gerry-chen.com/publications">Gerry Chen</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                Sunil Kumar Narayanan<sup>1</sup>,
+                <a href="https://www.linkedin.com/in/sunil-kumar-0a3a36145/">Sunil Kumar Narayanan</a><sup>1</sup>,
               </span>
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/gautierottou/">Thomas Gautier Ottou</a><sup>1</sup>,
@@ -192,7 +192,7 @@ Yongsheng Chen\inst{1} -->
             676x200
             416x200
             450x200
-          
+
           -->
           <!-- <div class="column">
             <video autoplay muted loop height="100%">
@@ -236,9 +236,9 @@ Yongsheng Chen\inst{1} -->
               However, traditional 3D reconstruction with HSI is difficult due to technological limitations of hyperspectral cameras.
               In recent years, Neural Radiance Fields (NeRFs) have seen widespread success in creating high quality volumetric 3D representations of scenes captured by a variety of camera models.
               Leveraging recent advances in NeRFs, we propose computing a hyperspectral 3D reconstruction in which every point in space and view direction is characterized by wavelength-dependent radiance and transmittance spectra.
-              To evaluate our approach, a dataset containing nearly 2000 hyperspectral images across 8 scenes and 2 cameras was collected.  We perform comparisons against traditional RGB NeRF baselines and apply ablation testing with alternative spectra representations. 
+              To evaluate our approach, a dataset containing nearly 2000 hyperspectral images across 8 scenes and 2 cameras was collected.  We perform comparisons against traditional RGB NeRF baselines and apply ablation testing with alternative spectra representations.
               Finally, we demonstrate the potential of hyperspectral NeRFs for hyperspectral super-resolution and imaging sensor simulation.
-              We show that our hyperspectral NeRF approach enables creating fast, accurate volumetric 3D hyperspectral scenes and enables several new applications and areas for future study. 
+              We show that our hyperspectral NeRF approach enables creating fast, accurate volumetric 3D hyperspectral scenes and enables several new applications and areas for future study.
             </p>
           </div>
         </div>
@@ -476,7 +476,7 @@ Yongsheng Chen\inst{1} -->
           <br />
 
           <h1 class="title is-3">Ablations</h1>
-          Comparing the depth maps of ablations, ours and 
+          Comparing the depth maps of ablations, ours and
             <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow><mrow><msub><mi>&#x3C3;</mi><mn>0</mn></msub></mrow><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
           are consistent and high quality, with the fewest spurious discontinuities in foreground surfaces.
           <br />
@@ -553,7 +553,7 @@ Yongsheng Chen\inst{1} -->
             Meanwhile, the network using
               <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>2</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
             often appears fuzzy, which suggests that mixing together the spatial and wavelength information is not as efficient.
-            Finally, although the networks uing 
+            Finally, although the networks uing
               <math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:1.25rem;"><mstyle><mrow><mtable columnspacing="0.167em" columnalign="right center left" displaystyle="true"><mtr><mtd><mrow><msub><mi>C</mi><mn>1</mn></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>
             generally appear slightly sharper than ours, they do not have a continuous wavelength representation so they do not as naturally interpolate wavelengths and, as mentioned, they tend to have slightly less accurate absolute intensities (e.g. on the middle row's leaf brightness).
           </div>
@@ -625,7 +625,7 @@ Yongsheng Chen\inst{1} -->
                 </div>
               </div>
               <br />
-              
+
               <script>
                 function changeVideoSource() {
                     var radios = document.getElementsByName('video');
@@ -857,7 +857,7 @@ Yongsheng Chen\inst{1} -->
 
           <!-- Super-resolution as Images -->
           <div class="column is-full box">
-            
+
             <a href="#hs-sweep-images" data-action="collapse">
               <h3 class="title is-4">Image Grid: Sweep hyperspectral wavelengths &nbsp;&nbsp;[+]</h3>
               <p>Inspect the individual rendered images by wavelength and amount of interpolation.
@@ -867,7 +867,7 @@ Yongsheng Chen\inst{1} -->
             </a>
 
             <script>
-              populate_table_every = (scene, increment) => 
+              populate_table_every = (scene, increment) =>
               function() {
                 const col0 = document.getElementById('col0');
                 const col1 = document.getElementById('col1');
