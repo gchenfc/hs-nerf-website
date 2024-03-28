@@ -5,22 +5,22 @@
   <meta charset="utf-8" />
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Hyperspectral NeRF" />
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
-  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <meta name="description" content="We extend NeRF to hyperspectral images, which have many (e.g. 128) channels instead of just 3 for RGB images, to generate 3D models with continuous wavelength representation." />
+  <meta property="og:title" content="Hyperspectral Neural Radiance Fields" />
+  <meta property="og:description" content="We extend NeRF to hyperspectral images, which have many (e.g. 128) channels instead of just 3 for RGB images, to generate 3D models with continuous wavelength representation." />
+  <meta property="og:url" content="https://gchenfc.github.io/hs-nerf-website/" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="static/supplemental-results-data/headline/hs-moving-camera.jpg" />
+  <meta property="og:image:width" content="1350" />
+  <meta property="og:image:height" content="650" />
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG" />
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG" />
+  <meta name="twitter:title" content="Hyperspectral Neural Radiance Fields" />
+  <meta name="twitter:description" content="We extend NeRF to hyperspectral images, which have many (e.g. 128) channels instead of just 3 for RGB images, to generate 3D models with continuous wavelength representation." />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png" />
+  <meta name="twitter:image" content="static/supplemental-results-data/headline/hs-moving-camera.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
+  <meta name="keywords" content="Neural Radiance Fields, NeRF, Hyperspectral Imagery, Hyperspectral, Hyperspectral Super-resolution, 3D Reconstruction, 3D computer vision" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Hyperspectral Neural Radiance Fields</title>
@@ -331,6 +331,15 @@ Yongsheng Chen\inst{1} -->
         </a>
 
         <div class="is-centered has-text-centered is-collapsible" id="rgb">
+
+          <p class="has-text-justified">
+            We can observe that the right-most column (trained using all 128 hyperspectral channels) produces better color accuracy and clarity than the middle-3 columns (trained using only pseudo-RGB images).
+            We believe this to be because the additional channels improve the SNR, as nearby wavelengths are correlated so more data samples provides more information to the model.
+            The additional data outweighs the effect of increased data complexity while keeping model complexity (and parameter count) roughly constant.
+            <br />
+            Using our method on pseudo-rgb data (Ours-RGB and Ours-Cont), we don't see much performance difference to the nerfacto baseline despite the more challenging representation.
+          </p>
+          <br />
 
           <div class="column" style="width:25%;float: left;">
             Sample <u>ground truth</u> image
